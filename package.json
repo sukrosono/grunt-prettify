@@ -1,7 +1,7 @@
 {
   "name": "grunt-prettify",
   "description": "HTML prettifier with options to format HTML according to your own preferences.",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "homepage": "https://github.com/jonschlinkert/grunt-prettify",
   "author": {
     "name": "jonschlinkert",
@@ -22,21 +22,21 @@
   ],
   "main": "Gruntfile.js",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.10.0"
   },
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
-    "async": "~0.9.0",
+    "async": "~1.5.2",
     "globby": "~4.1.0",
-    "js-beautify": "~1.5.4",
+    "js-beautify": "~1.7.3",
     "lodash": "~2.4.1",
-    "underscore.string": "~2.3.3"
+    "underscore.string": "~2.4.0"
   },
   "devDependencies": {
     "assemble": "~0.4.27",
-    "grunt": "~0.4.2",
+    "grunt": "~1.0.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-jshint": "~0.7.2",
     "mocha": "*",
