@@ -17,35 +17,35 @@ var prettify = require('js-beautify').html;
 var _str = require('underscore.string');
 var _ = require('lodash');
 
+function normalize(str) {
+    return str.replace(/\r/g, '');
+}
+
+function stripBOM(str) {
+    if (str.charCodeAt(0) === 0xFEFF) {
+    return str.slice(1);
+    }
+    return str;
+}
+
 function read(fp) {
     var str = fs.readFileSync(fp, 'utf8');
     str = normalize(str);
     return stripBOM(str);
-  }
+}
 
-  function normalize(str) {
-    return str.replace(/\r/g, '');
-  }
-
-  function stripBOM(str) {
-    if (str.charCodeAt(0) === 0xFEFF) {
-      return str.slice(1);
-    }
-    return str;
-  }
-
-  // Normalize and condense all newlines
-  function condense(str) {
+// Normalize and condense all newlines
+function condense(str) {
     return str.replace(/(\r\n|\n\r|\n|\r){2,}/g, '\n');
-  }
+}
 
-  // fix multiline, Bootstrap-style comments
-  function padcomments(str, num) {
+// fix multiline, Bootstrap-style comments
+function padcomments(str, num) {
     var nl = _str.repeat('\n', (num || 1));
     return str.replace(/(\s*)(<!--.+)\s*(===.+)?/g, nl + '$1$2$1$3');
-  }
+}
 
-  var ocd = function (str) {
+var ocd = function (str) {
     str = str
     // Remove any empty lines at the top of a file.
     .replace(/^\s*/g, '')
@@ -66,7 +66,7 @@ function read(fp) {
     // Bring closing comments up to the same line as closing tag.
     .replace(/\s*(<!--\s*\/.+)/g, '$1');
     return str;
-  };
+};
 
 module.exports = function (grunt) {
 
