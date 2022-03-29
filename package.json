@@ -30,7 +30,7 @@
   "dependencies": {
     "async": "~1.5.2",
     "globby": "~4.1.0",
-    "js-beautify": "~1.7.3",
+    "js-beautify": "~1.14.1",
     "lodash": "~2.4.1",
     "underscore.string": "~2.4.0"
   },
