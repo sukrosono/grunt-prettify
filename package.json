@@ -28,7 +28,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "async": "~1.5.2",
+    "async": "~3.2.2",
     "globby": "~4.1.0",
     "js-beautify": "~1.7.3",
     "lodash": "~2.4.1",
